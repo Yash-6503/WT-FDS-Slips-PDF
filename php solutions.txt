@@ -1,0 +1,691 @@
+slip 1)
+<html>
+        <title></title>
+<style>
+h1{
+        text-align:center;
+                color:red;
+}
+div{
+        border:2px solid black;
+                        background-color:yellow;
+                                padding-left:10%;
+                                        margin-left:20%;
+                                                width:50%;
+
+}
+</style>
+<body>
+        <b><h1>Project Management</h1></b>
+        <div>
+                <form>
+                        Project Name:<input type="text"><br><br>
+                        Assigned To:<select id="a">
+                                <option>ABC</option>
+                                <option>PQR</option>
+                                <option>TRN</option>
+                                <option>KLN</option>
+                        </select><br><br>
+                        Start Date:<input type="date"><br><br>
+                        End Date:<input type="date"><br><br>
+                        Priority:<input type="radio" name="high"value="a">High
+                        <input type="radio" name="high"value="b">Average
+                        <input type="radio" name="high"value="c">Low
+                        <br><br>
+                        Description:<input type="text"><br><br>
+                        <input type="submit" value="Submit"><br><br>
+                        <input type="clear" value="Clear"><br><br>
+        </form>
+        </div>
+</body>
+</html>
+
+
+Slip2)
+<!DOCTYPEhtml>
+<html>
+        <head>
+                <title>My City</title>
+<style>
+body{
+        background-color:pink;
+}
+p{
+        color:blue;
+}
+img{
+        height:400px;
+                width:500px;
+}
+</style>
+                </head>
+                <body>
+                        <p><h1><b>Chandori</b></h1></p>
+                        <h2>KKWagh Senior College</h2>
+                        <h3>Godavari River</h3>
+                        <h4>Lord Indra's Temple</h4>
+                        <marquee><b>Chandori belongs to the Nashik</b></marquee>
+                        <img src="https://images.pexels.com/photos/219972/pexels-photo-219972.j
+peg?cs=srgb&dl=pexels-pixabay-219972.jpg&fm=jpg">
+</html>
+
+
+slip 4)
+<head>
+<title></title>
+<style>
+        table,th,td
+        {
+         padding:8px;
+         border-collapse:collapse;
+        }
+</style>
+</head>
+<body>
+<table border=1px;border-collapse:collaps;
+<tr>
+<th colspan="4";>List of Books</th>
+</tr>
+<th rowspan="2";>Item No</th>
+<th rowspan="2";>Item Name</th>
+<th colspan="2";>Price</th>
+<tr>
+<td align="center">Rs.</td>
+<td align="center">Paise</td>
+</tr>
+<tr>
+<td align="center";>1</td>
+<td align="center";>Programming in Python</td>
+<td align="center";>500</td>
+<td align="center";>50</td>
+</tr>
+<tr>
+<td align="center";>2</td>
+<td align="left";>Programming in Java</td>
+<td align="center";>345</td>
+<td align="center";>00</td>
+</tr>
+</table>
+</body>
+</html>
+
+
+
+
+slip8
+<!DOCTYPEhtml>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<form method="post">
+Enter first string<input type="text"name="str1"><br><br>
+Enter second string<input type="text"name="str2"><br><br>
+<input type="radio"name="rb"value="1">Occurence<br>
+<input type="radio"name="rb"value="2">Position<br>
+<input type="radio"name="rb"value="3">Compare<br>
+<input type="submit"name="btn"><br><br>
+</form>
+</body>
+<?php
+if (isset($_POST["btn"]))
+{
+        $str1=$_POST['str1'];
+        $str2=$_POST['str2'];
+        $rb=$_POST['rb'];
+        echo"First string=$str.<br>";
+        echo "Second string=$str2.<br>";
+        switch($rb)
+        {
+        case 1: if(strcmp($str2,substr($str1,0,strlen($str2)))==0)
+        {
+                echo"yes 2nd string appears at start of 1st string";
+        }
+else
+{
+        echo"No,string does not appears at start of 1st string";
+}
+break;
+case 2:$Z=0;
+        $flag=0;
+        while($Z<=strlen($str1))
+        {
+                if(strcmp($str2,substr($str1,$Z,strlen($str2)))==0)
+                {
+                        $flag=1;
+                        $pos=$Z+1;
+                        $Z++;
+                }
+                else
+                {
+                        $Z++;
+                }
+                if($flag==1)
+                {
+                        echo"yes string found at $pos";
+                }
+                else
+                {
+                        echo "String not found";
+  
+                break;
+        }
+
+case 3:if(strcmp($str1,$str2)==0)
+{
+        echo"Both the strings are same";
+}
+else
+{
+        echo "Both strings are not same";
+}
+break;
+        }
+        }
+?>
+</html>
+
+
+slip9)
+<!DOCTYPEhtml>
+<html>
+<head>
+</head>
+<body>
+<form method="POST">
+Enter a string:<input type="text" name="str"><br>
+Choose a seprator:
+<select name=="sep">
+<option>#</option>
+<option>%</option>
+<option>@</option>
+</select><br>
+<input type="radio" name="rb" value="1">Split using seprator<br>
+<input type="radio" name="rb" value="2">Replace with other seprator<br>
+<input type="radio" name="rb" value="3">Find last word<br>
+<input type="submit" name="btnshow" value="Submit"><br>
+</form>
+</body>
+<?php
+if(isset($_POST["btnshow"]))
+{
+        $str=$_POST["str"];
+        $sep=$_POST["sep"];
+        $rb=$_POST["rb"];
+        switch($rb)
+        {
+        case 1:$words=explode(" ",$str);
+        foreach($words as $word)
+                echo $word, $sep;
+        break;
+        case 2: $words=explode(" ",$str);
+        foreach($words as $word)
+                echo $word, ",";
+        break;
+        case 3: $last_word_start=strrpos($str,' ')+1;
+        echo $last_word=substr($str,$last_word_start);
+        break;
+
+?>
+</html>
+
+
+slip10)
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<form method="POST">
+Enter first number<input type="text"name="txtbox1"><br><br>
+Enter second number<input type="text"name="txtbox2"<br>
+<input type="radio"name="rbchoice"value="1">Mod<br>
+<input type="radio"name="rbchoice"value="2">Power<br>
+<input type="radio"name="rbchoice"value="3">Sum<br>
+<input type="radio"name="rbchoice"value="4">Factorial<br>
+<input type="submit"name="btn"value="Show">
+</form>
+</body>
+<?php
+if(isset($_POST["btn"]))
+{
+        extract($_POST);
+}
+
+switch($rbchoice)
+{
+case 1:echo $txtbox1 % $txtbox2;
+        break;
+case 2:echo pow($txtbox1,$txtbox2);
+        break;
+case 3:echo $txtbox1+$txtbox2;
+        break;
+case 4:$ans=1;
+        for($i=1;$i<=$txtbox2;$i++)
+        {
+                $ans=$ans*$i;
+        }
+        echo $ans;
+        break;
+}
+?>
+</html>
+
+
+
+slip 15)
+<!DOCTYPEhtml>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<form method="get">
+Enter the string<input type="text"name="num1"><br><br>
+<input type="submit"name="btn"><br><br>
+<input type="radio"name="rb"value="1">Length<br>
+<input type="radio"name="rb"value="2">Total no of vowels<br>
+<input type="radio"name="rb"value="3">Lowercase<br>
+<input type="radio"name="rb"value="4">Padding with *<br>
+<input type="radio"name="rb"value="5">Remove whitespace<br>
+</form>
+</body>
+<?php
+if (isset($_GET["btn"]))
+{
+        extract($_GET);
+}
+switch($rb)
+{
+case 1:$num1;
+        echo "String is:".$num1;
+        for($string_length=0;$num1[$string_length] !=null;$string_length++);
+        {
+                echo "Total string length :".$string_length;
+        }
+        break;
+case 2:$num1;
+        echo "String is:".$num1;
+        echo"<br>";
+        $vowels=array('a','e','i','o','u');
+        $len=strlen($num1);
+        $num =0;
+        $i=0;
+        while($i<$len)
+        {
+                if(in_array($num1[$i],$vowels))
+                {
+                        $num++;
+                }
+                $i++;
+        }
+        echo "Number of vowels:".$num;
+        echo "<br>";
+        break;
+case 3:$num1;
+        $string=ucwords($num1);
+        $string=ucwords(strtolower($string));
+        echo"String is:".$string;
+        break;
+case 4:$num1;
+        echo str_pad($num1,20,"*",STR_PAD_BOTH);
+        break;
+case 5:$num1;
+        echo "string is:".$num1;
+        echo "<br>";
+        $num1=str_replace('','',$num1);
+        echo $num1;
+        break;
+case 6:$num1;
+        echo "Reverse of string $num1 is =>".strrev($num1);
+        break;
+}
+?>
+</html>
+
+
+slip 17)
+<?php
+echo "Ascending order sort by value";
+$arr1=array("Sophia"=>"31","Jacob"=>"41","William"=>"39","Ramesh"=>"40");
+asort($arr1);
+foreach($arr1 as $y=>$y_value)
+{
+        echo "<br>Age of ".$y."is:".$y_value." ";
+}
+
+
+echo "<br><br>Ascending order sort by keys";
+$arr2=array("Sophia"=>"31","Jacob"=>"41","Willaiam"=>"39","Ramesh"=>"40");
+ksort($arr2);
+foreach($arr2 as $y=>$y_value)
+{
+        echo "<br>Age of ".$y."is:".$y_value." ";
+}
+
+
+echo "<br><br>Decending order sort by value";
+$arr3=array("Sophia"=>"31","Jacob"=>"41","William"=>"39","Ramesh"=>"40");
+arsort($arr3);
+foreach($arr3 as $y=>$y_value)
+{
+        echo "<br>Age of ".$y."is:".$y_value." ";
+}
+
+
+echo "<br><br>Decending order sort by key";
+$arr4=array("Sophia"=>"31","Jacob"=>"41","William"=>"39","Ramesh"=>"40");
+krsort($arr4);
+foreach($arr4 as $y=>$y_value)
+{
+        echo "<br>Age of ".$y."is:".$y_value." ";
+}
+?>
+
+
+slip 19)
+<!DOCTYPEhtml>
+<html>
+<head></head>
+<body>
+<form method="POST">
+Enter a sentence:<input type="text" name="str1"><br>
+Enter a word:<input type="text" name="str2"><br>
+Enter position:<input type="text" name="pos"><br>
+Enter no. of characters to be deleted:<input type="text" name="n"><br>
+
+<input type="radio" name="rb" value="1">Delete<br>
+<input type="radio" name="rb" value="2">Insert<br>
+<input type="radio" name="rb" value="3"><Replace<br>
+<input type="radio" name="rb" value="4">Replace all<br>
+<input type="submit" name="btnshow" value="Submit">
+</form>
+</body>
+<?php
+if(isset($_POST["btnshow"]))
+{
+        $str1=$_POST["str1"];
+        $str2=$_POST["str2"];
+        $pos=$_POST["pos"];
+        $n=$_POST["n"];
+        $rb=$_POST["rb"];
+        switch($rb)
+        {
+        case 1:echo str_replace(substr($str1,$pos,$n)," ",$str1);
+        break;
+        case 2:echo substr_replace($str1,$str2,$pos,0);
+        break;
+        case 3: echo str_replace(substr($str1,$pos,strlen($str2)),$str2,$str1);
+        break;
+        }
+}
+?>
+</html>
+
+
+slip 20)
+<html>
+<body>
+<form method="POST">
+Enter the choice:
+<br><input type="radio" name="ch" value="1"> Split array into chunks<br>
+<input type="radio" name="ch" value="2"> Sort by values without changing key<br>
+<input type="radio" name="ch"value="3"> Filter odd element<br>
+<input type="radio" name="ch" value="4"> Merge given two arrays<br>
+<input type="radio" name="ch" value="5"> Intersection of two arrays<br>
+<input type="radio" name="ch" value="6"> Union of two array<br>
+<input type="radio" name="ch" value="7">Set difference of two arrays<br>
+<input type="submit" value="Submit">
+<input type="reset" value="REset"><br>
+</body>
+<?php
+function is_odd($var)
+{
+        if($var%2==1)
+                return $var;
+}
+$choice=$_POST['ch'];
+$arr1=array('a'=>1,'b'=>2,'c'=>3,'d'=>4,'e'=>5);
+$arr2=array('f'=>6,'g'=>7,'h'=>8,'i'=>9,'j'=>10);
+switch($choice)
+{
+case 1:
+        print_r(array_chunk($arr1,2));
+        break;
+case 2:
+        asort($arr1);
+        echo "Array in ascending order:<br>";
+        print_r($arr1);
+        arsort($arr1);
+        echo "Array in decending order:<br>";
+        print_r($arr1);
+        break;
+case 3:
+        print_r(array_filter($arr1,'is_odd'));
+        break;
+case 4:
+        print_r(array_merge($arr1,$arr2));
+        break;
+case 5:
+        print_r(array_intersect($arr1,$arr2));
+        break;
+case 6:
+        $union=array_merge($arr1,$arr2);
+        print_r(array_unique($union));
+        break;
+case 7:
+        print_r(array_diff($arr1,$arr2));
+        break;
+}
+?>
+</html>
+
+
+slip21)
+<html>
+<h2>manipulate the Array</h2>
+        <h3>High Temperatures for Spring Month</h3>
+<?php
+$temp = array(68, 70, 72, 58, 60, 79, 82, 73, 75, 77, 73, 58, 63, 79, 78,
+         68, 72, 73, 80, 79, 68, 72, 75, 77, 73, 78, 82, 85, 89, 83);
+
+ //Add the values in the array
+$sum = array_sum($temp);
+  //Count the items in the array
+$count = count($temp);
+    //Find the average
+$average = ($sum/$count);
+      //Remove duplicate temp
+$temp = array_unique($temp);
+        //Sort array from low to high
+         sort($temp);
+//
+           //Slice array for last 5 temp
+            $warmest = array_slice($temp, -5, 5);
+//             //Slice array for first 5 temp
+              $coolest = array_slice($temp, 0, 5);
+
+                ?>
+                 <p>The average high temp is:
+                 <?php
+                                         echo round($average)."&degF";
+                                       ?>
+                                         </p>
+              <p>The 5 warmest high temps were:
+<?php
+foreach($warmest as $w){echo "$w&degF, ";}
+?>
+</p>
+                   <p>The 5 coolest high temps were:
+<?php
+foreach($coolest as $c){echo "$c&degF, ";}
+?>
+</p>
+                   </html>
+
+
+
+slip 22) and 23)
+<html>
+<body>
+<form method="POST">
+Choose the operation:
+<br><input type="radio" name="ch" value="1">Insert the element from stack<br>
+<input type="radio" name="ch" value="2">Delete the element from stack<br>
+<input type="radio" name="ch" value="3"> Display the elements of stack<br>
+<input type="radio" name="ch" value="4">Insert the elements into queue<br>
+<input type="radio" name="ch" value="5"> Delete the elemets from queue<br>
+<input type="radio" name="ch" value="6"> Display the elements of queue<br>
+<input type="submit" value="Submit"><br>
+<input type="reset" value="Reset"><br>
+</form>
+</body>
+<?php
+$choice=$_POST['ch'];
+{
+$arr=array(1,2,3,4,5,6,7,8,9,10);
+switch($choice)
+{
+case 1:array_push($arr,10);
+        print_r($arr);
+        break;
+case 2:
+        $ele=array_pop($arr);
+        echo "Deleted element:,$ele";
+        break;
+case 3: print_r($arr);
+        break;
+case 4:array_unshift($arr,55,66);
+        print_r($arr);
+        break;
+case 5:
+        $ele=array_shift($arr);
+        echo "Deleted elements:,$ele";
+        break;
+case 6:print_r($arr);
+        break;
+}
+}
+?>
+</html>
+
+
+slip 25)
+<html>
+<body>
+<form method="post">
+<input type="radio" name="rb" value="1">Display type of file<br>
+<input type="radio" name="rb" value="2">Display last access time of file<br>
+<input type="radio" name="rb" value="3">Display the size of file<br>
+<input type="radio" name="rb" value="4">Delete the file<br>
+<input type="submit" name="btnshow" value="Submit">
+<input type="reset" value="Reset">
+</form>
+</body>
+<?php
+$myFile=$_POST["myFile"];
+if(isset($_POST["btnshow"]))
+{
+        $rb=$_POST['rb'];
+        switch($rb)
+        {
+        case 1:
+                echo filetype($myFile);
+                break;
+        case 2:
+                echo "Last accessed: ".date("d F Y H:i:s.",fileatime("copy.txt"));
+                break;
+        case 3:
+                echo filesize($myFile) . " bytes";
+                break;
+        case 4:
+                unlink($myFile);
+                echo "File deleted !";
+                break;
+        }
+}
+?>
+</html>
+
+
+slip 28)
+<?php
+{
+        $myfile="item.dat";
+        $lines=file($myfile);
+
+        $itemcode=$lines[0];
+        $itemname=$lines[1];
+        $itemunit=$lines[2];
+        $itemrate=$lines[3];
+
+        $i_code=explode(' ',$itemcode);
+        $i_name=explode(' ',$itemname);
+        $i_unit=explode(' ',$itemunit);
+        $i_rate=explode(' ',$itemrate);
+
+        $i_amt=(($i_unit[0]*$i_rate[0])+($i_unit[1]*$i_rate[1])+($i_unit[2]*$i_rate[2])+($i_uni
+t[3]*$i_rate[3])+($i_unit[4]*$i_rate[4]));
+}
+?>
+<html>
+<head>
+<style>
+table,
+th,
+td{
+border:1px solid black;
+border-collapse:collapse;
+}
+</style>
+</head>
+<body>
+<br><br><br>
+<table align=center border=1>
+<tr>
+<td><b>Item code</b></td>
+<td><b>Item name</b></td>
+<td><b>Item unit</b></td>
+<td><b>Item rate</b></td>
+</tr>
+<tr>
+<td><?php echo $i_code[0] ?></td>
+<td><?php echo $i_name[0] ?></td>
+<td><?php echo $i_unit[0] ?></td>
+<td><?php echo $i_rate[0] ?></td>
+</tr>
+<tr>
+<td><?php echo $i_code[1] ?></td>
+<td><?php echo $i_name[1] ?></td>
+<td><?php echo $i_unit[1] ?></td>
+<td><?php echo $i_rate[1] ?></td>
+</tr>
+<tr>
+<td><?php echo $i_code[2] ?></td>
+<td><?php echo $i_name[2] ?></td>
+<td><?php echo $i_unit[2] ?></td>
+<td><?php echo $i_rate[2] ?></td>
+</tr>
+<tr>
+<td><?php echo $i_code[3] ?></td>
+<td><?php echo $i_name[3] ?></td>
+<td><?php echo $i_unit[3] ?></td>
+<td><?php echo $i_rate[3] ?></td>
+</tr>
+<tr>
+<td><?php echo $i_code[4] ?></td>
+<td><?php echo $i_name[4] ?></td>
+<td><?php echo $i_unit[4] ?></td>
+<td><?php echo $i_rate[4] ?></td>
+</tr>
+<tr>
+<th colspan=3>Total amount</th>
+<td><?php echo $i_amt?></td>
+</tr>
+</table>
+</body>
+</html>
+
+
+                                                                             1,1           Top
